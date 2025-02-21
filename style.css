@@ -1,17 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&display=swap');
+
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Georgia', serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    color: #333;
-    background: #f8f8f8;
+    color: #222; 
+    background: #fff;
     text-align: center;
 }
 
 header {
-    background: #fff;
+    background: #D71920;
+    color: #fff;
     padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 24px;
+    font-weight: bold;
 }
 
 .container {
@@ -28,33 +32,34 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #fff;
+    background: #222;
     padding: 40px;
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-decoration: none;
-    color: #000;
+    color: #fff;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .tile:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+    background: #D71920;
 }
 
 .tile h2 {
     margin: 0;
     font-size: 24px;
+    font-weight: bold;
 }
 
 .tile p {
     margin-top: 10px;
     font-size: 16px;
-    color: #666;
+    color: #ddd;
 }
 
 footer {
     margin-top: 40px;
     padding: 20px;
-    background: #fff;
+    background: #222;
+    color: white;
 }
