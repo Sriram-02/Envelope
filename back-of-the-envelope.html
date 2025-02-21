@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Envelope</title>
+    <title>Back of the envelope</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,7 +18,7 @@
 
     <script>
         async function loadBlogs() {
-            const response = await fetch('https://api.github.com/repos/sriram-02/sriram-02.github.io/contents/the-envelope');
+            const response = await fetch('https://api.github.com/repos/sriram-02/sriram-02.github.io/contents/back-of-the-envelope');
             if (!response.ok) return;
             const files = await response.json();
             let blogList = "<ul>";
