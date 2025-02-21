@@ -1,1 +1,23 @@
-this was created on a random friday, happy to have made it. 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Title</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+    <header>
+        <h1>Blog Title</h1>
+        <a href="../../fast-but-wrong.html">← Back to Fast but Wrong</a>
+    </header>
+
+    <main class="container">
+        <p>This was made on a random friday, happy to have done it</p>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 The Envelope</p>
+    </footer>
+</body>
+</html>
