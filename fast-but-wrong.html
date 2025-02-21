@@ -8,30 +8,17 @@
 </head>
 <body>
     <header>
-        <h1>Fast but Wrong</h1>
+        <h1>⚡ Fast but Wrong</h1>
         <a href="index.html">← Back to Home</a>
     </header>
 
-    <main id="fast-blogs">
-        <p>Loading articles...</p>
+    <main class="container">
+        <h2>Articles</h2>
+        <ul>
+            <li><a href="blogs/fast-but-wrong/blog1.html">Why Speed Matters</a></li>
+            <li><a href="blogs/fast-but-wrong/blog2.html">A Wrong Take on AI</a></li>
+        </ul>
     </main>
-
-    <script>
-        async function loadBlogs() {
-            const response = await fetch('https://api.github.com/repos/sriram-02/sriram-02.github.io/contents/fast-but-wrong');
-            if (!response.ok) return;
-            const files = await response.json();
-            let blogList = "<ul>";
-            files.forEach(file => {
-                if (file.name.endsWith(".md")) {
-                    blogList += `<li><a href="${file.download_url}" target="_blank">${file.name.replace('.md', '')}</a></li>`;
-                }
-            });
-            blogList += "</ul>";
-            document.getElementById("fast-blogs").innerHTML = blogList;
-        }
-        loadBlogs();
-    </script>
 
     <footer>
         <p>&copy; 2025 The Envelope</p>
