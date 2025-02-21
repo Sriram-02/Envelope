@@ -1,42 +1,67 @@
+/* Apple-like minimalist design */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
     color: #333;
     background: #f8f8f8;
 }
+
 header {
-    background: #222;
-    color: #fff;
-    padding: 1rem;
+    background: #fff;
+    padding: 20px;
     text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
 nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
+
 nav ul li {
     display: inline;
-    margin-right: 15px;
 }
+
 nav ul li a {
-    color: #fff;
     text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    font-size: 18px;
+    transition: color 0.3s ease;
 }
+
+nav ul li a:hover {
+    color: #0071e3;
+}
+
 section {
-    padding: 20px;
-    background: white;
-    margin: 10px auto;
-    width: 80%;
-    max-width: 800px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 80px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
 }
+
+section h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+section p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
 footer {
     text-align: center;
-    padding: 1rem;
-    background: #222;
-    color: #fff;
-    margin-top: 20px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
 }
