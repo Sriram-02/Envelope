@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&display=swap');
 
 body {
-    font-family: 'Georgia', serif;
+    font-family: 'Georgia', serif; 
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -32,17 +32,20 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #222;
+    background: #fff;
     padding: 40px;
     border-radius: 12px;
     text-decoration: none;
-    color: #fff;
+    color: #D71920;
+    border: 2px solid #D71920;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .tile:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
     background: #D71920;
+    color: #fff;
 }
 
 .tile h2 {
@@ -54,12 +57,13 @@ header {
 .tile p {
     margin-top: 10px;
     font-size: 16px;
-    color: #ddd;
+    color: #444;
 }
 
 footer {
     margin-top: 40px;
     padding: 20px;
-    background: #222;
-    color: white;
+    background: #fff;
+    color: #222;
+    font-size: 14px;
 }
