@@ -118,3 +118,17 @@ window.addEventListener('scroll', function() {
         header.classList.remove('shrunk');
     }
 });
+
+const blogLinks = {
+    'fast-but-wrong': 'blogs/fast-but-wrong/blog1.html',
+    '100-opinions': 'blogs/100-opinions/dummy.txt',
+    'back-of-the-envelope': 'blogs/back-of-the-envelope/dummy.txt',
+    'coming-soon': 'blogs/coming-soon/dummy.txt'
+};
+
+document.querySelectorAll('.blog-tile').forEach(tile => {
+    const category = tile.getAttribute('data-category');
+    if (blogLinks[category]) {
+        tile.setAttribute('href', blogLinks[category]);
+    }
+});
