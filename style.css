@@ -8,7 +8,7 @@ body {
 }
 
 header {
-    background: #fff;
+    background: transparent;
     padding: 40px;
     font-size: 48px;
     font-weight: bold;
@@ -17,8 +17,15 @@ header {
     width: 100%;
     top: 0;
     left: 0;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+}
+
+header.shrunk {
+    background: #f5f5f5;
+    padding: 15px 20px;
+    font-size: 28px;
+    text-align: left;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .container {
@@ -102,3 +109,12 @@ header {
     color: #666;
     margin: 0;
 }
+
+window.addEventListener('scroll', function() {
+    let header = document.querySelector('header');
+    if (window.scrollY > 50) {
+        header.classList.add('shrunk');
+    } else {
+        header.classList.remove('shrunk');
+    }
+});
