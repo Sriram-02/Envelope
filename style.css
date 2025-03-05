@@ -14,7 +14,7 @@ header {
     width: 100%;
     background: #D71920;
     color: white;
-    padding: 20px 0;
+    padding: 10px 0;
     text-align: center;
     font-size: 36px;
     font-weight: bold;
@@ -23,7 +23,7 @@ header {
 }
 
 header.shrink {
-    padding: 10px 20px;
+    padding: 5px 10px;
     font-size: 24px;
     text-align: left;
 }
