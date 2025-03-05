@@ -122,7 +122,7 @@ header h1 {
     position: absolute;
     right: 0; /* Align to the right */
     top: -10px; /* Adjust vertically to fit inside the border */
-    background: inherit; /* Match the page background */
+    background: #333; /* Match the page background */
     padding-left: 10px; /* Small spacing from the line */
     font-size: 16px;
     font-family: "Libre Baskerville", serif;
