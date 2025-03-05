@@ -28,6 +28,11 @@ header.shrink {
     text-align: left;
 }
 
+header h1 {
+    margin: 0;
+    font-size: inherit;
+}
+
 .container {
     display: flex;
     flex-direction: column;
