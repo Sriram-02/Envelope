@@ -107,10 +107,24 @@ header h1 {
     color: #666;
 }
 
-hr {
-    border: none;
-    height: 1px;
-    background: #ddd;
-    margin: 20px 0;
+.section-divider {
+    position: relative;
+    width: 100%;
+    height: 0; /* No actual height */
+    border-top: 1px solid #D71920; /* Thin red border on top */
+    border-bottom: 1px solid #D71920; /* Thin red border on bottom */
+    margin: 20px 0; /* Space around the line */
+}
+
+.section-divider::after {
+    content: attr(data-title); /* Get text from data-title */
+    position: absolute;
+    right: 0; /* Align to the right */
+    top: -10px; /* Adjust vertically to fit inside the border */
+    background: white; /* Match the page background */
+    padding-left: 10px; /* Small spacing from the line */
+    font-size: 16px;
+    font-family: "Libre Baskerville", serif;
+    color: #D71920;
 }
 
