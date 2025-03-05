@@ -59,13 +59,15 @@ header h1 {
 
 .blog-tiles {
     display: flex;
-    overflow-x: auto;
+    flex-wrap: nowrap; /* Prevents tiles from stacking */
+    overflow-x: auto; /* Enables horizontal scrolling */
     gap: 20px;
     padding-bottom: 10px;
+    scrollbar-width: thin; /* Optional: Makes the scrollbar less obtrusive */
 }
 
 .tile {
-    flex: 0 0 300px;
+    flex: 0 0 300px; /* Ensures tiles do not shrink */
     background: white;
     padding: 20px;
     border-radius: 8px;
