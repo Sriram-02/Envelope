@@ -38,7 +38,7 @@ header h1 {
     flex-direction: column;
     gap: 40px;
     max-width: 1200px;
-    margin: 120px auto 50px auto;
+    margin: 80px auto 50px auto;
     padding: 20px;
 }
 
@@ -49,6 +49,7 @@ header h1 {
 .category h2 {
     font-size: 32px;
     color: #222222;
+    margin-top: 5px;
     margin-bottom: 1px;
     font-family: "Libre Baskerville", "Times New Roman", serif; 
 }
