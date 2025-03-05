@@ -128,3 +128,61 @@ header h1 {
     color: #D71920;
 }
 
+/* Positioning the index menu */
+.index-menu {
+    position: relative;
+    display: inline-block;
+}
+
+/* Styling the button */
+.index-button {
+    background: none;
+    border: 1px solid #D71920;
+    color: #D71920;
+    padding: 5px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: "Libre Baskerville", serif;
+    transition: background 0.3s ease;
+}
+
+/* Hover effect on button */
+.index-button:hover {
+    background: #D71920;
+    color: white;
+}
+
+/* The hidden dropdown menu */
+.index-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid #D71920;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    display: none;
+    flex-direction: column;
+}
+
+/* Dropdown items */
+.index-dropdown a {
+    padding: 10px;
+    text-decoration: none;
+    color: #D71920;
+    display: block;
+    font-weight: bold;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect on links */
+.index-dropdown a:hover {
+    background: #D71920;
+    color: white;
+}
+
+/* Show dropdown on hover */
+.index-menu:hover .index-dropdown {
+    display: flex;
+}
