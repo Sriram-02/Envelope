@@ -245,7 +245,28 @@ header {
     color: #666;
 }
 
+/* Enforce no wrap for all pages */
+.index-page .blog-tiles,
+.opinions-page .blog-tiles,
+.fast-but-wrong-page .blog-tiles {
+    display: flex;
+    flex-wrap: nowrap !important; /* Forces tiles to stay in a single row */
+    overflow-x: auto; /* Enables horizontal scrolling if needed */
+    max-width: 100%;
+    gap: 20px;
+    padding: 0 20px;
+    justify-content: flex-start;
+}
 
+/* Standardize tile sizes across all pages */
+.index-page .tile,
+.opinions-page .tile,
+.fast-but-wrong-page .tile {
+    flex: 0 0 300px;
+    max-width: 300px;
+    width: 300px;
+}
+    
 /* 100 Opinions Page Specific Styles */
 .opinions-page .intro {
     text-align: center;
@@ -253,18 +274,6 @@ header {
     color: #444;
     max-width: 800px;
     margin: 20px auto;
-}
-
-.opinions-page .blog-tiles {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.opinions-page .tile {
-    width: 320px;
-    text-align: center;
 }
 
 /* Fast but Wrong Page Specific Styles */
@@ -276,14 +285,3 @@ header {
     margin: 20px auto;
 }
 
-.fast-but-wrong-page .blog-tiles {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.fast-but-wrong-page .tile {
-    width: 320px;
-    text-align: center;
-}
