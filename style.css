@@ -199,7 +199,7 @@ header {
     overflow-x: auto; /* Enables horizontal scrolling */
     max-width: 1200px; 
     gap: 20px;
-    padding-bottom: 0 20px;
+    padding: 0 20px;
     scrollbar-width: thin; /* Optional: Makes the scrollbar less obtrusive */
     justify-content: flex-start;
 }
