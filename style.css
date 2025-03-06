@@ -110,8 +110,8 @@ header {
     top: 100%;
     right: 0;
     background: white;
-    border: 1px solid #D71920;
-    border-radius: 5px;
+    border: none;
+    border-radius: 0;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     min-width: 200px;
     display: none;
@@ -125,7 +125,7 @@ header {
     text-decoration: none;
     color: #D71920;
     display: block;
-    font-weight: bold;
+    font-weight: normal;
     transition: background 0.3s ease, color 0.3s ease;
 }
 
