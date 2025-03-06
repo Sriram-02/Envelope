@@ -61,6 +61,17 @@ header h1 {
     margin-top: 0;
 }
 
+.category-title {
+    text-decoration: none; /* Remove underline */
+    color: #222222; /* Keep your black theme */
+    font-size: 32px; /* Ensure it stays same as before */
+    font-family: "EB Garamond", serif; /* Maintain typography */
+}
+
+.category-title:hover {
+    text-decoration: underline; /* Add an underline on hover */
+}
+
 .blog-tiles {
     display: flex;
     flex-wrap: nowrap; /* Prevents tiles from stacking */
