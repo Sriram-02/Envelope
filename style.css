@@ -53,7 +53,8 @@ header {
     justify-content: space-between;
 }
 
-.header-title {
+.header-title, 
+.fast-but-wrong-page .header-title {
     flex-grow: 1;
     text-align: center;
     margin: 0;
