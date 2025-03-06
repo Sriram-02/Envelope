@@ -81,6 +81,7 @@ header {
     white-space: nowrap;
     display: inline-block;
     z-index: 1100;
+    margin-left: auto; 
 }
 
 .index-button:hover {
