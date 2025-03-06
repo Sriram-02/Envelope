@@ -200,3 +200,24 @@ header h1 {
 .index-menu:hover .index-dropdown {
     display: flex;
 }
+
+/* Fast but Wrong Page Specific Styles */
+.fast-but-wrong-page .intro {
+    text-align: center;
+    font-size: 18px;
+    color: #444;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.fast-but-wrong-page .blog-tiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.fast-but-wrong-page .tile {
+    width: 320px;
+    text-align: center;
+}
