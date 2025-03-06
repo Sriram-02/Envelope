@@ -197,6 +197,7 @@ header {
     display: flex;
     flex-wrap: nowrap; /* Prevents tiles from stacking */
     overflow-x: auto; /* Enables horizontal scrolling */
+    max-width: 1200px; 
     gap: 20px;
     padding-bottom: 10px;
     scrollbar-width: thin; /* Optional: Makes the scrollbar less obtrusive */
@@ -204,6 +205,7 @@ header {
 
 .tile {
     flex: 0 0 300px; /* Ensures tiles do not shrink */
+    max-width: 350px; 
     background: white;
     padding: 20px;
     border-radius: 8px;
@@ -215,7 +217,8 @@ header {
 }
 
 .tile img {
-    width: 100%;
+    max-width: 100%;
+    width: auto; 
     height: 180px;
     object-fit: cover;
     border-radius: 5px;
