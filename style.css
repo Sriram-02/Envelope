@@ -7,20 +7,26 @@ body {
     background: #f8f8f8;
 }
 
-header.site-header {
+/* Restore global header for index.html */
+header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     background: #D71920;
     color: white;
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 24px;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 36px;
     font-weight: bold;
     z-index: 1000;
+}
+
+/* Ensure it doesn’t apply to other pages */
+.fast-but-wrong-page header.site-header,
+.opinions-page header.site-header {
+    font-size: 24px;
+    padding: 10px 20px;
 }
 
 .header-container {
@@ -102,6 +108,21 @@ header.site-header {
     display: flex;
 }
 
+/* Restore Image Constraints */
+.tile img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Restore Font & Divider Styles */
+.section-divider {
+    border-top: 1px solid #D71920;
+    border-bottom: 1px solid #D71920;
+    margin: 20px 0;
+}
+
 /* 100 Opinions Page Specific Styles */
 .opinions-page .intro {
     text-align: center;
@@ -119,6 +140,27 @@ header.site-header {
 }
 
 .opinions-page .tile {
+    width: 320px;
+    text-align: center;
+}
+
+/* Fast but Wrong Page Specific Styles */
+.fast-but-wrong-page .intro {
+    text-align: center;
+    font-size: 18px;
+    color: #444;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.fast-but-wrong-page .blog-tiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.fast-but-wrong-page .tile {
     width: 320px;
     text-align: center;
 }
