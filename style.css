@@ -36,7 +36,15 @@ header {
     padding: 10px 20px;
 }
 
+.container {
+    max-width: 1200px; /* Restricts content width for better readability */
+    margin: 0 auto; /* Centers content on the page */
+    padding: 20px; /* Adds spacing around the text */
+}
+
 .header-container {
+    max-width: 1200px; 
+    margin: 0 auto; 
     display: flex;
     align-items: center;
     width: 100%;
@@ -129,6 +137,8 @@ header {
 
 /*all the code that GPT deleted */
 .category {
+    max-width: 800px;
+    margin: 0 auto; 
     text-align: left;
 }
 
