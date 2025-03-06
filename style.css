@@ -120,12 +120,13 @@ header {
 }
 
 .index-dropdown a {
-    padding: 5px;
+    padding: 8px;
+    text-align: left;
     text-decoration: none;
     color: #D71920;
     display: block;
     font-family: 'Inter', sans-serif;
-    font-size: 10px;
+    font-size: 16px;
     font-weight: normal;
     transition: background 0.3s ease, color 0.3s ease;
 }
