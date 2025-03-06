@@ -65,7 +65,8 @@ header {
     align-items: center;
     margin-left: auto;
     padding: 0 10px; 
-    background: blue !important; 
+    background: blue !important;
+    z-index: 1100; 
 }
 
 .index-button {
@@ -79,6 +80,7 @@ header {
     transition: background 0.3s ease;
     white-space: nowrap;
     display: inline-block;
+    z-index: 1100;
 }
 
 .index-button:hover {
