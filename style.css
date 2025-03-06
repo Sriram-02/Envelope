@@ -1,36 +1,91 @@
-/* General styles */
 body {
-    font-family: "Inter", sans-serif;
+    font-family: 'Inter', sans-serif;
     margin: 0;
-    padding: 0;
+    padding-top: 80px;
     line-height: 1.6;
     color: #333;
     background: #f8f8f8;
 }
 
-/* Header Styling */
-.header-container {
-    max-width: 1200px; /* Keeps header content within a fixed width */
-    margin: 0 auto;
+html, body {
+    overflow: auto !important;
+}
+
+/* Restore global header for index.html */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    background: #D71920;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 32px;
+    font-family: "Libre Baskerville", "Times New Roman", serif;
+    font-weight: bold;
+    height: 60px;
+    display: flex; 
+    align-items: center; 
+    z-index: 1000;
+}
+
+/* Ensure it doesnâ€™t apply to other pages */
+.fast-but-wrong-page header.site-header,
+.opinions-page header.site-header {
+    font-size: 24px;
     padding: 10px 20px;
 }
 
-/* Index Menu */
+.container {
+    margin-top: 80px;
+    max-width: 1200px; /* Restricts content width for better readability */
+    margin: 0 auto; /* Centers content on the page */
+    padding: 20px; /* Adds spacing around the text */
+}
+
+.header-container {
+    max-width: 1200px; 
+    margin: 0 auto; 
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.header-title {
+    flex-grow: 1;
+    text-align: center;
+    margin: 0;
+    font-size: 32px;
+    font-family: "Libre Baskerville", "Times New Roman", serif;
+    font-weight: bold;
+}
+
+.back-link {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 5px 10px;
+    transition: opacity 0.3s;
+}
+
+.back-link:hover {
+    opacity: 0.7;
+}
+
 .index-menu {
     position: relative;
     display: flex;
     align-items: center;
     margin-left: auto;
     padding: 0 10px; 
-    z-index: 1100;
+    background: none;
+    z-index: 1100; 
 }
 
 .index-button {
-    background: none;
+    background: none; 
     border: 1px solid white;
     color: white;
     padding: 5px 15px;
@@ -41,7 +96,7 @@ body {
     white-space: nowrap;
     display: inline-block;
     z-index: 1100;
-    margin-left: auto;
+    margin-left: auto; 
 }
 
 .index-button:hover {
@@ -49,7 +104,6 @@ body {
     color: #D71920;
 }
 
-/* Dropdown Styling */
 .index-dropdown {
     position: absolute;
     top: 100%;
@@ -62,7 +116,7 @@ body {
     display: none;
     flex-direction: column;
     max-width: 250px; 
-    overflow: hidden;
+    overflow: hidden; 
 }
 
 .index-dropdown a {
@@ -79,28 +133,81 @@ body {
     color: white;
 }
 
-/* FIXED: Dropdown only appears when hovering over button */
 .index-button:hover + .index-dropdown,
 .index-dropdown:hover {
     display: flex;
 }
 
-/* Blog Tiles Section */
-.blog-tiles {
-    display: flex;
-    flex-wrap: nowrap; /* Keeps all tiles in a row */
-    overflow-x: auto; /* Allows horizontal scrolling */
-    max-width: 1200px;
-    gap: 20px;
-    padding: 0 20px; /* Prevents content from touching screen edges */
-    justify-content: flex-start; /* Ensures tiles align from left without stretching */
+/*all the code that GPT deleted */
+.category {
+    max-width: 800px;
+    margin: 0 auto; 
+    text-align: left;
 }
 
-/* FIXED: Tile Appearance */
+.category h2 {
+    font-size: 32px;
+    color: #222222;
+    margin-top: 5px;
+    margin-bottom: 1px;
+    font-family: "Libre Baskerville", "Times New Roman", serif; 
+}
+
+.category p {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.2;
+    margin-top: 0;
+}
+
+.category-title {
+    text-decoration: none; /* Remove underline */
+    color: #222222; /* Keep your black theme */
+    font-size: 32px; /* Ensure it stays same as before */
+    font-family: "Libre Baskerville", serif; /* Maintain typography */
+    text-underline-offset: 3px; /* Adjust underline distance from text */
+    text-decoration-thickness: 1px; /* Make underline thinner */
+}
+
+.category-title:hover {
+    text-decoration: underline; /* Add an underline on hover */
+}
+
+.section-divider {
+    position: relative;
+    width: 100%;
+    height: 0; /* No actual height */
+    border-top: 1px solid #D71920; /* Thin red border on top */
+    border-bottom: 1px solid #D71920; /* Thin red border on bottom */
+    margin: 20px 0; /* Space around the line */
+}
+
+.section-divider::after {
+    content: attr(data-title); /* Get text from data-title */
+    position: absolute;
+    right: 0; /* Align to the right */
+    top: -10px; /* Adjust vertically to fit inside the border */
+    background: #f8f8f8; /* Match the page background */
+    padding-left: 10px; /* Small spacing from the line */
+    font-size: 16px;
+    font-family: "Libre Baskerville", serif;
+    color: #D71920;
+
+.blog-tiles {
+    display: flex;
+    flex-wrap: nowrap; /* Prevents tiles from stacking */
+    overflow-x: auto; /* Enables horizontal scrolling */
+    max-width: 1200px; 
+    gap: 20px;
+    padding-bottom: 0 20px;
+    scrollbar-width: thin; /* Optional: Makes the scrollbar less obtrusive */
+    justify-content: flex-start;
+}
+
 .tile {
-    flex: 0 0 300px;
-    max-width: 300px; /* Ensures tiles never exceed their intended width */
-    width: 300px; /* Explicitly set width */
+    flex: 0 0 300px; /* Ensures tiles do not shrink */
+    max-width: 350px; 
+    width: 300px; 
     background: white;
     padding: 20px;
     border-radius: 8px;
@@ -111,25 +218,71 @@ body {
     flex-direction: column;
 }
 
-.tile:hover {
-    transform: translateY(-5px); /* Hover effect */
-}
-
-/* FIXED: Ensure Images Stay Inside Tiles */
 .tile img {
-    width: 100%; /* Forces image to stay inside the tile */
+    width: 100%; 
     height: 180px;
     object-fit: cover;
     border-radius: 5px;
     margin-bottom: 10px;
 }
 
-/* FIXED: Ensure page content is visible and scrollable */
-.container {
-    margin-top: 80px; /* Prevents content from being hidden under fixed header */
+.tile:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Ensure scrolling is always enabled */
-html, body {
-    overflow: auto;
+.tile h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Libre Baskerville", "Times New Roman", serif;
+}
+
+.tile p {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #666;
+}
+
+
+/* 100 Opinions Page Specific Styles */
+.opinions-page .intro {
+    text-align: center;
+    font-size: 18px;
+    color: #444;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.opinions-page .blog-tiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.opinions-page .tile {
+    width: 320px;
+    text-align: center;
+}
+
+/* Fast but Wrong Page Specific Styles */
+.fast-but-wrong-page .intro {
+    text-align: center;
+    font-size: 18px;
+    color: #444;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.fast-but-wrong-page .blog-tiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.fast-but-wrong-page .tile {
+    width: 320px;
+    text-align: center;
 }
