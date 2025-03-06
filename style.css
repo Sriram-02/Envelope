@@ -66,6 +66,8 @@ header h1 {
     color: #222222; /* Keep your black theme */
     font-size: 32px; /* Ensure it stays same as before */
     font-family: "Libre Baskerville", serif; /* Maintain typography */
+    text-underline-offset: 3px; /* Adjust underline distance from text */
+    text-decoration-thickness: 1px; /* Make underline thinner */
 }
 
 .category-title:hover {
