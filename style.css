@@ -122,6 +122,18 @@ header {
     display: flex;
 }
 
+.blog-tiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.tile {
+    width: 320px;
+    text-align: center;
+}
+
 /* Restore Image Constraints */
 .tile img {
     width: 100%;
