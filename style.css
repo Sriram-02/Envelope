@@ -51,7 +51,7 @@ header h1 {
     color: #222222;
     margin-top: 5px;
     margin-bottom: 1px;
-    font-family: "EB Garamond", "Times New Roman", serif; 
+    font-family: "Libre Baskerville", "Times New Roman", serif; 
 }
 
 .category p {
@@ -65,7 +65,7 @@ header h1 {
     text-decoration: none; /* Remove underline */
     color: #222222; /* Keep your black theme */
     font-size: 32px; /* Ensure it stays same as before */
-    font-family: "EB Garamond", serif; /* Maintain typography */
+    font-family: "Libre Baskerville", serif; /* Maintain typography */
 }
 
 .category-title:hover {
@@ -110,7 +110,7 @@ header h1 {
     margin: 0;
     font-size: 20px;
     font-weight: bold;
-    font-family: "EB Garamond", "Times New Roman", serif;
+    font-family: "Libre Baskerville", "Times New Roman", serif;
 }
 
 .tile p {
@@ -136,7 +136,7 @@ header h1 {
     background: #f8f8f8; /* Match the page background */
     padding-left: 10px; /* Small spacing from the line */
     font-size: 16px;
-    font-family: "EB Garamond", serif;
+    font-family: "Libre Baskerville", serif;
     color: #D71920;
 }
 
@@ -154,7 +154,7 @@ header h1 {
     padding: 5px 15px;
     font-size: 16px;
     cursor: pointer;
-    font-family: "EB Garamond", serif;
+    font-family: "Libre Baskerville", serif;
     transition: background 0.3s ease;
 }
 
