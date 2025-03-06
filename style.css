@@ -7,6 +7,10 @@ body {
     background: #f8f8f8;
 }
 
+html, body {
+    overflow: auto !important;
+}
+
 /* Restore global header for index.html */
 header {
     position: fixed;
