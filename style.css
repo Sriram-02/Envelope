@@ -30,7 +30,7 @@ header {
     z-index: 1000;
 }
 
-/* Ensure it doesnâ€™t apply to other pages */
+/* Ensure it doesnt apply to other pages */
 .fast-but-wrong-page header.site-header,
 .opinions-page header.site-header {
     font-size: 24px;
