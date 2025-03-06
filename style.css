@@ -118,7 +118,8 @@ header {
     color: white;
 }
 
-.index-menu:hover .index-dropdown {
+.index-button:hover + .index-dropdown,
+.index-dropdown:hover {
     display: flex;
 }
 
