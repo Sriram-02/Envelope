@@ -65,12 +65,12 @@ header {
     align-items: center;
     margin-left: auto;
     padding: 0 10px; 
-    background: blue !important;
+    background: none;
     z-index: 1100; 
 }
 
 .index-button {
-    background: green !important; 
+    background: none; 
     border: 1px solid white;
     color: white;
     padding: 5px 15px;
