@@ -284,9 +284,30 @@ header {
 
 /* Fast but Wrong Page Specific Styles */
 .fast-but-wrong-page .intro {
-    text-align: center;
-    font-size: 18px;
-    color: #444;
-    max-width: 800px;
-    margin: 20px auto;
+    display: flex; /* Enables side-by-side layout */
+    align-items: center; /* Vertically aligns content */
+    gap: 20px; /* Space between elements */
+    max-width: 800px; /* Prevents excessive width */
+    margin: 20px auto; /* Centers the section */
+}
+
+.fast-but-wrong-page .intro h2 {
+    font-size: 24px;
+    font-weight: bold;
+    white-space: nowrap; /* Prevents title from breaking */
+    text-align: left; /* Ensures left alignment */
+    flex: 0 0 auto; /* Prevents the h2 from stretching */
+}
+
+.fast-but-wrong-page .intro-divider {
+    width: 2px;
+    background-color: #333; /* Dark grey divider */
+    height: 40px; /* Adjust height as needed */
+}
+
+.fast-but-wrong-page .intro p {
+    font-size: 16px;
+    color: #555;
+    text-align: left; /* Ensures left alignment */
+    flex: 1; /* Allows paragraph to take remaining space */
 }
