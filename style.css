@@ -53,14 +53,13 @@ header {
     justify-content: space-between;
 }
 
-.header-title, 
-.fast-but-wrong-page .header-title {
+.header-title {
     flex-grow: 1;
     text-align: center;
     margin: 0;
     font-size: 32px;
     font-family: "Libre Baskerville", "Times New Roman", serif;
-    font-weight: bold;
+    font-weight: normal;
 }
 
 .back-link {
