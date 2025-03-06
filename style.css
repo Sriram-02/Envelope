@@ -37,6 +37,7 @@ header {
 }
 
 .container {
+    margin-top: 80px;
     max-width: 1200px; /* Restricts content width for better readability */
     margin: 0 auto; /* Centers content on the page */
     padding: 20px; /* Adds spacing around the text */
