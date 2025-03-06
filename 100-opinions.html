@@ -3,24 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>100 Opinions</title>
+    <title>The Envelope | 100 Opinions</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="pictures/newlogo.png">
 </head>
-<body>
+<body class="opinions-page">
     <header>
-        <h1>100-opinions</h1>
-        <a href="index.html">← Back to Home</a>
+        <div class="header-container">
+            <a href="index.html" class="back-link">&#8592; Back</a>
+            <h1>The Envelope | 💡 100 Opinions</h1>
+            <div class="index-menu">
+                <button class="index-button">☰ Index</button>
+                <div class="index-dropdown">
+                    <a href="fast-but-wrong.html">⚡ Fast but Wrong</a>
+                    <a href="100-opinions.html">💡 100 Opinions</a>
+                    <a href="back-of-the-envelope.html">📊 Back of the Envelope</a>
+                    <a href="coming-soon.html">🚀 Coming Soon</a>
+                </div>
+            </div>
+        </div>
     </header>
-
-    <main id="opinions-blogs">
-        <p>Loading articles...</p>
+    
+    <main class="container">
+        <section class="intro">
+            <h2>What does this mean?</h2>
+            <p>These are well-thought-out opinions on various topics. (Replace this text with your explanation.)</p>
+        </section>
+        
+        <div class="section-divider" data-title="100 Opinions"></div>
+        
+        <div id="opinions-blogs" class="blog-tiles">
+            <p>Loading articles...</p>
+        </div>
     </main>
-
-    <script src="script.js" defer></script>
 
     <footer>
         <p>&copy; 2025 The Envelope</p>
     </footer>
+    <script src="script.js" defer></script>
 </body>
 </html>
