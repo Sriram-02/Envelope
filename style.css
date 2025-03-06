@@ -122,16 +122,84 @@ header {
     display: flex;
 }
 
+/*all the code that GPT deleted */
+.category {
+    text-align: left;
+}
+
+.category h2 {
+    font-size: 32px;
+    color: #222222;
+    margin-top: 5px;
+    margin-bottom: 1px;
+    font-family: "Libre Baskerville", "Times New Roman", serif; 
+}
+
+.category p {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.2;
+    margin-top: 0;
+}
+
+.category-title {
+    text-decoration: none; /* Remove underline */
+    color: #222222; /* Keep your black theme */
+    font-size: 32px; /* Ensure it stays same as before */
+    font-family: "Libre Baskerville", serif; /* Maintain typography */
+    text-underline-offset: 3px; /* Adjust underline distance from text */
+    text-decoration-thickness: 1px; /* Make underline thinner */
+}
+
+.category-title:hover {
+    text-decoration: underline; /* Add an underline on hover */
+}
+
 .blog-tiles {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: nowrap; /* Prevents tiles from stacking */
+    overflow-x: auto; /* Enables horizontal scrolling */
     gap: 20px;
+    padding-bottom: 10px;
+    scrollbar-width: thin; /* Optional: Makes the scrollbar less obtrusive */
 }
 
 .tile {
-    width: 320px;
-    text-align: center;
+    flex: 0 0 300px; /* Ensures tiles do not shrink */
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.tile img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.tile:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.tile h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Libre Baskerville", "Times New Roman", serif;
+}
+
+.tile p {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #666;
 }
 
 /* Restore Image Constraints */
