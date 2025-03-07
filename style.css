@@ -273,94 +273,70 @@ header {
     margin: 20px auto;
 }
 
-/* Page Heading */
-.page-heading {
-    font-size: 36px;
-    font-family: "Libre Baskerville", serif;
-    text-align: left;
-    margin-top: 20px; /* Prevents overlap with page title */
-    margin-bottom: 30px;
-    color: #222;
+/* Hero section with full-width image and text overlay */
+.fast-but-wrong-page .hero-section {
+    position: relative;
+    width: 100%;
+    height: 70vh; /* Adjust height as needed */
+    margin-bottom: 40px;
+    overflow: hidden;
 }
 
-/* Improved styling for the intro section */
-.fast-but-wrong-page .intro {
-    display: flex;
-    align-items: flex-start;
-    gap: 30px; /* Increased gap for better spacing */
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0; /* Remove padding to align with other elements */
+.fast-but-wrong-page .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-/* Left side: Image & Title - 40% */
-.fast-but-wrong-page .intro-left {
+.fast-but-wrong-page .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Dark overlay for better text visibility */
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-    width: 40%; /* Set to 40% of container */
-    margin-left: 0; /* Align with left margin */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
 }
 
-/* Image Styling - make it larger like the tiles below */
-.fast-but-wrong-page .intro-image {
-    width: 100%; /* Take full width of parent */
-    max-width: 300px; /* Similar to tile width */
-    height: auto;
-    object-fit: cover;
-    border-radius: 5px; /* Match tile styling */
-    margin: 0; /* Remove margins */
-}
-
-/* H2 Styling */
-.fast-but-wrong-page .intro h2 {
-    font-size: 24px;
-    font-weight: bold;
-    text-align: left;
-    margin: 0; /* Remove default margins */
+.fast-but-wrong-page .hero-title {
     font-family: "Libre Baskerville", "Times New Roman", serif;
+    font-size: 48px;
+    color: white;
+    margin-bottom: 20px;
+    max-width: 800px;
 }
 
-/* Vertical Divider - thinner and more professional */
-.fast-but-wrong-page .intro-divider {
-    width: 1px; /* Thinner line */
-    background-color: rgba(0, 0, 0, 0.2); /* Lighter color for subtlety */
-    align-self: stretch; /* Make it stretch to match container height */
-    margin: 0; /* Remove margins */
+.fast-but-wrong-page .hero-subtitle {
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    color: white;
+    max-width: 700px;
+    line-height: 1.6;
 }
 
-/* Paragraph Styling - 60% */
-.fast-but-wrong-page .intro p {
-    font-size: 16px;
-    color: #555;
-    text-align: left;
-    width: 60%; /* Set to 60% of container */
-    margin: 0; /* Remove margins */
-    align-self: center; /* Center vertically */
-}
-
-/* Make sure the intro section aligns with the page heading */
+/* Hide the old intro section */
+.fast-but-wrong-page .intro,
 .fast-but-wrong-page .page-heading,
-.fast-but-wrong-page .intro {
-    padding-left: 0;
-    margin-left: 0;
+.fast-but-wrong-page .section-divider {
+    display: none;
 }
 
-/* Responsive adjustments for smaller screens */
+/* Responsive adjustments */
 @media (max-width: 768px) {
-    .fast-but-wrong-page .intro {
-        flex-direction: column;
+    .fast-but-wrong-page .hero-section {
+        height: 50vh;
     }
-    
-    .fast-but-wrong-page .intro-left,
-    .fast-but-wrong-page .intro p {
-        width: 100%;
+
+    .fast-but-wrong-page .hero-title {
+        font-size: 36px;
     }
-    
-    .fast-but-wrong-page .intro-divider {
-        width: 100%;
-        height: 1px;
-        margin: 15px 0;
+
+    .fast-but-wrong-page .hero-subtitle {
+        font-size: 16px;
     }
 }
