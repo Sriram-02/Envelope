@@ -64,6 +64,13 @@ header {
     color: inherit; /* Keeps original text color */
 }
 
+.header-title a {
+    text-decoration: none !important; /* Ensures underline is removed */
+    color: inherit !important; /* Uses the same color as parent (h1) */
+    font-size: inherit; /* Ensures font size remains consistent */
+    font-weight: inherit;
+}
+
 .index-menu {
     position: relative;
     display: flex;
