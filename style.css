@@ -271,32 +271,59 @@ header {
     margin: 20px auto;
 }
 
-/* Fast but Wrong Page Specific Styles */
-.fast-but-wrong-page .intro {
-    display: flex; /* Enables side-by-side layout */
-    align-items: center; /* Vertically aligns content */
-    gap: 20px; /* Space between elements */
-    max-width: 800px; /* Prevents excessive width */
-    margin: 20px auto; /* Centers the section */
+/* Page Heading */
+.page-heading {
+    font-size: 36px;
+    font-family: "Libre Baskerville", serif;
+    text-align: left;
+    margin-top: 20px; /* Prevents overlap with page title */
+    margin-bottom: 30px;
+    color: #222;
 }
 
+/* Layout for the Image + Title + Divider */
+.fast-but-wrong-page .intro {
+    display: flex; /* Enables side-by-side layout */
+    align-items: center; /* Vertically aligns items */
+    gap: 20px; /* Space between elements */
+    max-width: 1000px; /* Restrict width */
+    margin: 0 auto; /* Centers the section */
+}
+
+/* Left Side: Image & Title */
+.fast-but-wrong-page .intro-left {
+    display: flex;
+    flex-direction: column; /* Stack image & title */
+    align-items: flex-start; /* Left-align content */
+    gap: 10px;
+}
+
+/* Image Styling */
+.fast-but-wrong-page .intro-image {
+    max-width: 100px; /* Adjust image size */
+    height: auto;
+    display: block;
+}
+
+/* H2 Styling */
 .fast-but-wrong-page .intro h2 {
     font-size: 24px;
     font-weight: bold;
-    white-space: nowrap; /* Prevents title from breaking */
-    text-align: left; /* Ensures left alignment */
-    flex: 0 0 auto; /* Prevents the h2 from stretching */
+    text-align: left;
+    flex: 0 0 auto;
 }
 
+/* Vertical Divider */
 .fast-but-wrong-page .intro-divider {
     width: 2px;
-    background-color: #333; /* Dark grey divider */
-    height: 40px; /* Adjust height as needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Soft black */
+    height: 50px; /* Adjust as needed */
 }
 
+/* Paragraph Styling */
 .fast-but-wrong-page .intro p {
     font-size: 16px;
     color: #555;
-    text-align: left; /* Ensures left alignment */
+    text-align: left;
     flex: 1; /* Allows paragraph to take remaining space */
 }
