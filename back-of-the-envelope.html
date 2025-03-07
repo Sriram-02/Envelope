@@ -3,38 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Back of the envelope</title>
+    <title>The Envelope | Back of the Envelope</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="pictures/newlogo.png">
 </head>
-<body>
-    <header>
-        <h1>Fast but Wrong</h1>
-        <a href="index.html">← Back to Home</a>
+<body class="opinions-page">
+    <header class="site-header">
+        <div class="header-container">
+            <h1 class="header-title">
+                <a href="/Envelope/index.html">The Envelope</a>
+            </h1>
+            <div class="/Envelope/index.html">
+                <button class="index-button">☰ </button>
+                <div class="index-dropdown">
+                    <a href="fast-but-wrong.html">⚡ Fast but Wrong</a>
+                    <a href="100-opinions.html">💡 100 Opinions</a>
+                    <a href="back-of-the-envelope.html">📊 Back of the Envelope</a>
+                    <a href="coming-soon.html">🚀 Coming Soon</a>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <main id="fast-blogs">
-        <p>Loading articles...</p>
+    <main class="container">
+    <!-- New Hero Section -->
+    <section class="hero-section">
+        <img src="pictures/8305AE36-924F-4DD2-86E7-8FB0C7B50541.png" alt="100 Opinions" class="hero-image">
+        <div class="hero-overlay">
+            <h1 class="hero-title">Back of the Envelope</h1>
+            <p class="hero-subtitle">We come across numbers and forget them. This is an attempt to visualize the numbers that count. </p>
+        </div>
+    </section>
+        
+        <div class="section-divider" data-title="100 Opinions"></div>
+        
+        <div id="opinions-blogs" class="blog-tiles">
+            <p>Loading articles...</p>
+        </div>
     </main>
-
-    <script>
-        async function loadBlogs() {
-            const response = await fetch('https://api.github.com/repos/sriram-02/sriram-02.github.io/contents/back-of-the-envelope');
-            if (!response.ok) return;
-            const files = await response.json();
-            let blogList = "<ul>";
-            files.forEach(file => {
-                if (file.name.endsWith(".md")) {
-                    blogList += `<li><a href="${file.download_url}" target="_blank">${file.name.replace('.md', '')}</a></li>`;
-                }
-            });
-            blogList += "</ul>";
-            document.getElementById("envelope-blogs").innerHTML = blogList;
-        }
-        loadBlogs();
-    </script>
 
     <footer>
         <p>&copy; 2025 The Envelope</p>
     </footer>
+    <script src="script.js" defer></script>
 </body>
 </html>
