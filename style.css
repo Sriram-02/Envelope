@@ -167,7 +167,7 @@ header {
 
 /* Hover effect for category titles */
 .category-title:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 /* Section dividers with titles */
