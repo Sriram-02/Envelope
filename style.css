@@ -347,3 +347,30 @@ header {
         font-size: 16px;
     }
 }
+
+.blog-page .header-container {
+    max-width: 1200px; 
+    margin: 0 auto; 
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.blog-page .header-title {
+    flex-grow: 1;
+    text-align: center;
+    margin: 0;
+    font-size: 32px;
+    font-family: "Libre Baskerville", "Times New Roman", serif;
+    font-weight: normal;
+    text-decoration: none;
+    color: inherit;
+}
+
+.blog-page .header-title a {
+    text-decoration: none !important;
+    color: inherit !important;
+    font-size: inherit;
+    font-weight: inherit;
+}
