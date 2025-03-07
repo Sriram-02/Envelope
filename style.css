@@ -62,18 +62,6 @@ header {
     font-weight: normal;
 }
 
-.back-link {
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-    padding: 5px 10px;
-    transition: opacity 0.3s;
-}
-
-.back-link:hover {
-    opacity: 0.7;
-}
-
 .index-menu {
     position: relative;
     display: flex;
