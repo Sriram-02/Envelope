@@ -496,12 +496,13 @@ header {
     background: #f5f5f5;
     padding: 15px 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     font-family: "Libre Baskerville", serif;
     font-size: 20px;
     color: #333;
     transition: background 0.3s ease;
+    gap: 10px;
 }
  
 .resource-link:hover .resource-header {
