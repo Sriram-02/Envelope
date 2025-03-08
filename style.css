@@ -319,9 +319,8 @@ header {
 
 /* Blog date time venue */
 .blog-meta {
-    font-size: 14px;
+    font-size: 10px;
     color: #666; /* Soft gray */
-    font-style: italic;
     margin-bottom: 10px;
 }
 
