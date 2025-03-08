@@ -660,22 +660,6 @@ header {
     }
 }
 
-/* barrel visualization */
-.barrel-container {
-            display: grid;
-            grid-template-columns: repeat(10, 40px);
-            gap: 5px;
-            justify-content: center;
-            margin-top: 20px;
-}
-.barrel {
-    font-size: 30px;
-    color: #ccc; /* Default gray */
-}
-.used {
-    color: #000; /* Used barrels in black */
-}
-
 /* ----- RESPONSIVE ADJUSTMENTS ----- */
 @media (max-width: 768px) {
     /* Smaller hero section on mobile */
