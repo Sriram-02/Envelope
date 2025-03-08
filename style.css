@@ -521,6 +521,119 @@ header {
     }
 }
 
+/* Book review specific styles */
+.books-section {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.section-heading {
+    font-family: "Libre Baskerville", serif;
+    font-size: 36px;
+    color: #222;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #D71920;
+    padding-bottom: 10px;
+}
+
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.book-card {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.book-cover-container {
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+}
+
+.book-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.book-info {
+    padding: 15px;
+}
+
+.book-title {
+    font-family: "Libre Baskerville", serif;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+    color: #222;
+}
+
+.book-author {
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    color: #666;
+    margin: 0 0 10px 0;
+}
+
+.book-rating {
+    margin-bottom: 10px;
+    color: #FFD700; /* Gold color for stars */
+}
+
+.toggle-notes {
+    cursor: pointer;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    color: #D71920;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.book-notes {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+    margin-top: 10px;
+}
+
+.book-notes.active {
+    max-height: 500px;
+    padding-top: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .books-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 20px;
+    }
+    
+    .book-cover-container {
+        height: 220px;
+    }
+}
+
 /* ----- RESPONSIVE ADJUSTMENTS ----- */
 @media (max-width: 768px) {
     /* Smaller hero section on mobile */
