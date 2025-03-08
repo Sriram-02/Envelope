@@ -46,53 +46,55 @@ Though it is useful to note that natural gas is harder to transport than crude o
 India has a demand of 5 mn barrels of oil per day (BPD), of which 4 mn barrels are imported, though all crude oil is refined within the country. The price of a barrel of oil is ~INR 5K. 
 An important metric here is energy-to-chemical ratio, which measures what % of crude oil can be converted to non-petroleum chemicals. This matters because the chemicals derived from crude oil are actually more profitable than the fuel itself. Most refineries have energy-to-chemical ratios in the range of 10-15%, Reliance’s factory in Jamnagar operates at ~20%. </p>
 
-    <div class="container">
-        <h1>Global Oil Capacity Visualization</h1>
-        
-        <div class="controls">
-            <div class="control-group">
-                <label for="totalBarrels">Total Barrels:</label>
-                <input type="range" id="totalBarrelsRange" min="1" max="200" value="100">
-                <input type="number" id="totalBarrelsNumber" min="1" max="200" value="100">
-            </div>
+    <div class="oil-vis-container">
+        <div class="oil-vis-box">
+            <h1 class="oil-vis-title">Global Oil Capacity Visualization</h1>
             
-            <div class="control-group">
-                <label for="usedBarrels">Used Barrels:</label>
-                <input type="range" id="usedBarrelsRange" min="0" max="100" value="40">
-                <input type="number" id="usedBarrelsNumber" min="0" max="100" value="40">
-            </div>
-        </div>
-        
-        <div class="summary">
-            <h2>Summary</h2>
-            <p>Total barrels: <span id="totalBarrelsDisplay">100</span></p>
-            <p>Used barrels: <span id="usedBarrelsDisplay">40</span> (<span id="percentUsed">40</span>%)</p>
-            <p>Remaining: <span id="remainingBarrels">60</span> (<span id="percentRemaining">60</span>%)</p>
-            
-            <div class="legend">
-                <div class="legend-item">
-                    <div class="color-box used"></div>
-                    <span>Used</span>
+            <div class="oil-vis-controls">
+                <div class="oil-vis-control-group">
+                    <label class="oil-vis-label" for="oil-vis-totalBarrelsRange">Total Barrels:</label>
+                    <input type="range" class="oil-vis-input-range" id="oil-vis-totalBarrelsRange" min="1" max="200" value="100">
+                    <input type="number" class="oil-vis-input-number" id="oil-vis-totalBarrelsNumber" min="1" max="200" value="100">
                 </div>
-                <div class="legend-item">
-                    <div class="color-box remaining"></div>
-                    <span>Remaining</span>
+                
+                <div class="oil-vis-control-group">
+                    <label class="oil-vis-label" for="oil-vis-usedBarrelsRange">Used Barrels:</label>
+                    <input type="range" class="oil-vis-input-range" id="oil-vis-usedBarrelsRange" min="0" max="100" value="40">
+                    <input type="number" class="oil-vis-input-number" id="oil-vis-usedBarrelsNumber" min="0" max="100" value="40">
                 </div>
             </div>
             
-            <div class="progress-bar">
-                <div class="progress" id="progressBar" style="width: 40%"></div>
+            <div class="oil-vis-summary">
+                <h2 class="oil-vis-summary-title">Summary</h2>
+                <p class="oil-vis-summary-text">Total barrels: <span id="oil-vis-totalBarrelsDisplay">100</span></p>
+                <p class="oil-vis-summary-text">Used barrels: <span id="oil-vis-usedBarrelsDisplay">40</span> (<span id="oil-vis-percentUsed">40</span>%)</p>
+                <p class="oil-vis-summary-text">Remaining: <span id="oil-vis-remainingBarrels">60</span> (<span id="oil-vis-percentRemaining">60</span>%)</p>
+                
+                <div class="oil-vis-legend">
+                    <div class="oil-vis-legend-item">
+                        <div class="oil-vis-color-box oil-vis-used"></div>
+                        <span>Used</span>
+                    </div>
+                    <div class="oil-vis-legend-item">
+                        <div class="oil-vis-color-box oil-vis-remaining"></div>
+                        <span>Remaining</span>
+                    </div>
+                </div>
+                
+                <div class="oil-vis-progress-container">
+                    <div class="oil-vis-progress-bar" id="oil-vis-progressBar" style="width: 40%"></div>
+                </div>
             </div>
-        </div>
-        
-        <div class="barrels-grid" id="barrelsGrid">
-            <!-- Barrels will be generated here by JavaScript -->
+            
+            <div class="oil-vis-barrels-grid" id="oil-vis-barrelsGrid">
+                <!-- Barrels will be generated here by JavaScript -->
+            </div>
         </div>
     </div>
 
     <script>
         // SVG template for oil barrel
-        const barrelSVG = `
+        const oilBarrelSVG = `
             <svg width="30" height="40" viewBox="0 0 32 40">
                 <path d="M26,8 L26,4 C26,2.9 25.1,2 24,2 L8,2 C6.9,2 6,2.9 6,4 L6,8 C3.8,8 2,9.8 2,12 L2,32 C2,34.2 3.8,36 6,36 L26,36 C28.2,36 30,34.2 30,32 L30,12 C30,9.8 28.2,8 26,8 Z" 
                     stroke="black" 
@@ -106,104 +108,104 @@ An important metric here is energy-to-chemical ratio, which measures what % of c
             </svg>
         `;
 
-        // DOM elements
-        const totalBarrelsRange = document.getElementById('totalBarrelsRange');
-        const totalBarrelsNumber = document.getElementById('totalBarrelsNumber');
-        const usedBarrelsRange = document.getElementById('usedBarrelsRange');
-        const usedBarrelsNumber = document.getElementById('usedBarrelsNumber');
+        // DOM elements - all with oil-vis prefix
+        const oilVisTotalBarrelsRange = document.getElementById('oil-vis-totalBarrelsRange');
+        const oilVisTotalBarrelsNumber = document.getElementById('oil-vis-totalBarrelsNumber');
+        const oilVisUsedBarrelsRange = document.getElementById('oil-vis-usedBarrelsRange');
+        const oilVisUsedBarrelsNumber = document.getElementById('oil-vis-usedBarrelsNumber');
         
-        const totalBarrelsDisplay = document.getElementById('totalBarrelsDisplay');
-        const usedBarrelsDisplay = document.getElementById('usedBarrelsDisplay');
-        const remainingBarrels = document.getElementById('remainingBarrels');
-        const percentUsed = document.getElementById('percentUsed');
-        const percentRemaining = document.getElementById('percentRemaining');
-        const progressBar = document.getElementById('progressBar');
+        const oilVisTotalBarrelsDisplay = document.getElementById('oil-vis-totalBarrelsDisplay');
+        const oilVisUsedBarrelsDisplay = document.getElementById('oil-vis-usedBarrelsDisplay');
+        const oilVisRemainingBarrels = document.getElementById('oil-vis-remainingBarrels');
+        const oilVisPercentUsed = document.getElementById('oil-vis-percentUsed');
+        const oilVisPercentRemaining = document.getElementById('oil-vis-percentRemaining');
+        const oilVisProgressBar = document.getElementById('oil-vis-progressBar');
         
-        const barrelsGrid = document.getElementById('barrelsGrid');
+        const oilVisBarrelsGrid = document.getElementById('oil-vis-barrelsGrid');
 
         // Initial render
-        renderBarrels();
+        oilVisRenderBarrels();
 
         // Update functions
-        function updateTotalBarrels(value) {
+        function oilVisUpdateTotalBarrels(value) {
             const total = parseInt(value);
             
             // Update all total barrels elements
-            totalBarrelsRange.value = total;
-            totalBarrelsNumber.value = total;
-            totalBarrelsDisplay.textContent = total;
+            oilVisTotalBarrelsRange.value = total;
+            oilVisTotalBarrelsNumber.value = total;
+            oilVisTotalBarrelsDisplay.textContent = total;
             
             // Make sure used barrels don't exceed total
-            const used = parseInt(usedBarrelsNumber.value);
+            const used = parseInt(oilVisUsedBarrelsNumber.value);
             if (used > total) {
-                updateUsedBarrels(total);
+                oilVisUpdateUsedBarrels(total);
             } else {
                 // Recalculate percentages and render
-                updateSummary();
-                renderBarrels();
+                oilVisUpdateSummary();
+                oilVisRenderBarrels();
             }
             
             // Update used barrels range max
-            usedBarrelsRange.max = total;
-            usedBarrelsNumber.max = total;
+            oilVisUsedBarrelsRange.max = total;
+            oilVisUsedBarrelsNumber.max = total;
         }
 
-        function updateUsedBarrels(value) {
+        function oilVisUpdateUsedBarrels(value) {
             const used = parseInt(value);
-            const total = parseInt(totalBarrelsNumber.value);
+            const total = parseInt(oilVisTotalBarrelsNumber.value);
             
             // Make sure used doesn't exceed total
             const validUsed = Math.min(used, total);
             
             // Update used barrels elements
-            usedBarrelsRange.value = validUsed;
-            usedBarrelsNumber.value = validUsed;
-            usedBarrelsDisplay.textContent = validUsed;
+            oilVisUsedBarrelsRange.value = validUsed;
+            oilVisUsedBarrelsNumber.value = validUsed;
+            oilVisUsedBarrelsDisplay.textContent = validUsed;
             
-            updateSummary();
-            renderBarrels();
+            oilVisUpdateSummary();
+            oilVisRenderBarrels();
         }
 
-        function updateSummary() {
-            const total = parseInt(totalBarrelsNumber.value);
-            const used = parseInt(usedBarrelsNumber.value);
+        function oilVisUpdateSummary() {
+            const total = parseInt(oilVisTotalBarrelsNumber.value);
+            const used = parseInt(oilVisUsedBarrelsNumber.value);
             const remaining = total - used;
             const usedPercent = Math.round((used / total) * 100);
             const remainingPercent = 100 - usedPercent;
             
-            remainingBarrels.textContent = remaining;
-            percentUsed.textContent = usedPercent;
-            percentRemaining.textContent = remainingPercent;
-            progressBar.style.width = usedPercent + '%';
+            oilVisRemainingBarrels.textContent = remaining;
+            oilVisPercentUsed.textContent = usedPercent;
+            oilVisPercentRemaining.textContent = remainingPercent;
+            oilVisProgressBar.style.width = usedPercent + '%';
         }
 
-        function renderBarrels() {
-            const total = parseInt(totalBarrelsNumber.value);
-            const used = parseInt(usedBarrelsNumber.value);
+        function oilVisRenderBarrels() {
+            const total = parseInt(oilVisTotalBarrelsNumber.value);
+            const used = parseInt(oilVisUsedBarrelsNumber.value);
             
             // Clear existing barrels
-            barrelsGrid.innerHTML = '';
+            oilVisBarrelsGrid.innerHTML = '';
             
             // Create barrel elements
             for (let i = 0; i < total; i++) {
                 const barrel = document.createElement('div');
-                barrel.className = 'barrel';
+                barrel.className = 'oil-vis-barrel';
                 
                 // Determine color based on whether it's used or remaining
                 const color = i < used ? '#dc3545' : '#28a745';
-                const barrelHTML = barrelSVG.replace('COLOR_PLACEHOLDER', color);
+                const barrelHTML = oilBarrelSVG.replace('COLOR_PLACEHOLDER', color);
                 
                 barrel.innerHTML = barrelHTML;
-                barrelsGrid.appendChild(barrel);
+                oilVisBarrelsGrid.appendChild(barrel);
             }
         }
 
         // Event listeners
-        totalBarrelsRange.addEventListener('input', (e) => updateTotalBarrels(e.target.value));
-        totalBarrelsNumber.addEventListener('change', (e) => updateTotalBarrels(e.target.value));
+        oilVisTotalBarrelsRange.addEventListener('input', (e) => oilVisUpdateTotalBarrels(e.target.value));
+        oilVisTotalBarrelsNumber.addEventListener('change', (e) => oilVisUpdateTotalBarrels(e.target.value));
         
-        usedBarrelsRange.addEventListener('input', (e) => updateUsedBarrels(e.target.value));
-        usedBarrelsNumber.addEventListener('change', (e) => updateUsedBarrels(e.target.value));
+        oilVisUsedBarrelsRange.addEventListener('input', (e) => oilVisUpdateUsedBarrels(e.target.value));
+        oilVisUsedBarrelsNumber.addEventListener('change', (e) => oilVisUpdateUsedBarrels(e.target.value));
     </script>
 
     <footer>
