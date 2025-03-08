@@ -544,7 +544,7 @@ header {
     margin-bottom: 50px;
 }
 
-/* Enhanced Book Card Effect */
+/* Remove hover effect from the card itself */
 .book-card {
     display: flex;
     flex-direction: column;
@@ -552,20 +552,19 @@ header {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     padding: 15px;
-    position: relative;
+    /* Remove transitions and hover transforms */
+    transform: none !important;
+    transition: none;
 }
 
-/* Museum-like display effect on hover */
+/* Remove existing hover effect */
 .book-card:hover {
-    transform: translateY(-12px);
-    box-shadow: 
-        0 22px 25px -8px rgba(0, 0, 0, 0.25),
-        0 8px 10px -5px rgba(0, 0, 0, 0.1);
+    transform: none !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Book cover container with realistic appearance */
+/* Book cover container with natural shadow */
 .book-cover-container {
     width: 100%;
     height: 260px;
@@ -573,50 +572,29 @@ header {
     border-radius: 4px;
     position: relative;
     margin-bottom: 10px;
-    /* Subtle 3D effect with realistic shadow */
-    box-shadow: 
-        0 8px 15px -5px rgba(0, 0, 0, 0.25),
-        0 1px 3px rgba(0, 0, 0, 0.1);
-    padding: 8px;
-    background-color: #f8f8f8;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    transform-origin: center bottom;
+    /* Remove the white background and padding */
+    background-color: transparent;
+    padding: 0;
+    /* Remove existing shadow */
+    box-shadow: none;
 }
 
-/* Enhanced hover effect for book cover */
-.book-card:hover .book-cover-container {
-    box-shadow: 
-        0 12px 20px -5px rgba(0, 0, 0, 0.3),
-        0 4px 10px -3px rgba(0, 0, 0, 0.15);
-    transform: scale(1.02);
-}
-
-/* Realistic book cover appearance */
+/* Natural book cover appearance */
 .book-cover {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 2px;
-    /* Add a subtle border and shadow for realism */
-    box-shadow: 
-        inset 0 0 0 1px rgba(0, 0, 0, 0.1),
-        0 1px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+    /* Remove any borders/shadows that create white edges */
+    box-shadow: none;
+    /* Add subtle shadow to the left and bottom of the image */
+    filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.3));
+    transition: filter 0.3s ease;
 }
 
-/* Subtle shadow beneath the book to simulate museum lighting */
-.book-card:hover::after {
-    content: '';
-    position: absolute;
-    width: 80%;
-    height: 20px;
-    bottom: -10px;
-    left: 10%;
-    background: radial-gradient(ellipse at center, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0) 70%);
-    border-radius: 50%;
-    z-index: -1;
-    opacity: 0.6;
-    filter: blur(5px);
-    transition: all 0.3s ease;
+/* Enhance shadow on hover */
+.book-card:hover .book-cover {
+    filter: drop-shadow(5px 8px 8px rgba(0, 0, 0, 0.4));
 }
 
 .book-info {
@@ -679,10 +657,6 @@ header {
     
     .book-cover-container {
         height: 210px;
-    }
-    
-    .book-card:hover {
-        transform: translateY(-8px);
     }
 }
 
