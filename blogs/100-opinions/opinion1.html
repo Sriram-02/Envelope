@@ -45,6 +45,28 @@ Saudi’s dominance in oil may be on the decline because we are making an interm
 Though it is useful to note that natural gas is harder to transport than crude oil. Oil can be shipped in barrels and transported via sea. Gas either needs to be moved via thousands of miles of pipelines or needs to be liquified into LNG before being filled into barrels. Either way there is at least one extra step there that adds to its cost. Though it does have the highest energy density among all available fuels currently. 
 India has a demand of 5 mn barrels of oil per day (BPD), of which 4 mn barrels are imported, though all crude oil is refined within the country. The price of a barrel of oil is ~INR 5K. 
 An important metric here is energy-to-chemical ratio, which measures what % of crude oil can be converted to non-petroleum chemicals. This matters because the chemicals derived from crude oil are actually more profitable than the fuel itself. Most refineries have energy-to-chemical ratios in the range of 10-15%, Reliance’s factory in Jamnagar operates at ~20%. </p>
+    
+        <h2>Global Oil Reserves Visualization</h2>
+        <p>Out of <b>100</b> barrels, <b id="used-count">40</b> are used.</p>
+        
+        <div class="barrel-container" id="barrels"></div>
+    
+        <script>
+            function generateBarrels(total = 100, used = 40) {
+                const container = document.getElementById("barrels");
+                container.innerHTML = ""; // Clear previous content
+                
+                for (let i = 0; i < total; i++) {
+                    let barrel = document.createElement("span");
+                    barrel.classList.add("barrel");
+                    barrel.innerHTML = "🛢️"; // Oil barrel emoji
+                    if (i < used) barrel.classList.add("used");
+                    container.appendChild(barrel);
+                }
+            }
+    
+            generateBarrels(100, 40);
+        </script>
     </main>
 
     <footer>
