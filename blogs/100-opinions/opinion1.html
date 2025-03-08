@@ -45,8 +45,166 @@ Saudi’s dominance in oil may be on the decline because we are making an interm
 Though it is useful to note that natural gas is harder to transport than crude oil. Oil can be shipped in barrels and transported via sea. Gas either needs to be moved via thousands of miles of pipelines or needs to be liquified into LNG before being filled into barrels. Either way there is at least one extra step there that adds to its cost. Though it does have the highest energy density among all available fuels currently. 
 India has a demand of 5 mn barrels of oil per day (BPD), of which 4 mn barrels are imported, though all crude oil is refined within the country. The price of a barrel of oil is ~INR 5K. 
 An important metric here is energy-to-chemical ratio, which measures what % of crude oil can be converted to non-petroleum chemicals. This matters because the chemicals derived from crude oil are actually more profitable than the fuel itself. Most refineries have energy-to-chemical ratios in the range of 10-15%, Reliance’s factory in Jamnagar operates at ~20%. </p>
-    
-    </main>
+
+    <div class="container">
+        <h1>Global Oil Capacity Visualization</h1>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label for="totalBarrels">Total Barrels:</label>
+                <input type="range" id="totalBarrelsRange" min="1" max="200" value="100">
+                <input type="number" id="totalBarrelsNumber" min="1" max="200" value="100">
+            </div>
+            
+            <div class="control-group">
+                <label for="usedBarrels">Used Barrels:</label>
+                <input type="range" id="usedBarrelsRange" min="0" max="100" value="40">
+                <input type="number" id="usedBarrelsNumber" min="0" max="100" value="40">
+            </div>
+        </div>
+        
+        <div class="summary">
+            <h2>Summary</h2>
+            <p>Total barrels: <span id="totalBarrelsDisplay">100</span></p>
+            <p>Used barrels: <span id="usedBarrelsDisplay">40</span> (<span id="percentUsed">40</span>%)</p>
+            <p>Remaining: <span id="remainingBarrels">60</span> (<span id="percentRemaining">60</span>%)</p>
+            
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="color-box used"></div>
+                    <span>Used</span>
+                </div>
+                <div class="legend-item">
+                    <div class="color-box remaining"></div>
+                    <span>Remaining</span>
+                </div>
+            </div>
+            
+            <div class="progress-bar">
+                <div class="progress" id="progressBar" style="width: 40%"></div>
+            </div>
+        </div>
+        
+        <div class="barrels-grid" id="barrelsGrid">
+            <!-- Barrels will be generated here by JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        // SVG template for oil barrel
+        const barrelSVG = `
+            <svg width="30" height="40" viewBox="0 0 32 40">
+                <path d="M26,8 L26,4 C26,2.9 25.1,2 24,2 L8,2 C6.9,2 6,2.9 6,4 L6,8 C3.8,8 2,9.8 2,12 L2,32 C2,34.2 3.8,36 6,36 L26,36 C28.2,36 30,34.2 30,32 L30,12 C30,9.8 28.2,8 26,8 Z" 
+                    stroke="black" 
+                    strokeWidth="1.5" 
+                    fill="COLOR_PLACEHOLDER"
+                />
+                <path d="M6 13 L26 13 M6 20 L26 20 M6 27 L26 27" 
+                    stroke="black" 
+                    strokeWidth="1"
+                />
+            </svg>
+        `;
+
+        // DOM elements
+        const totalBarrelsRange = document.getElementById('totalBarrelsRange');
+        const totalBarrelsNumber = document.getElementById('totalBarrelsNumber');
+        const usedBarrelsRange = document.getElementById('usedBarrelsRange');
+        const usedBarrelsNumber = document.getElementById('usedBarrelsNumber');
+        
+        const totalBarrelsDisplay = document.getElementById('totalBarrelsDisplay');
+        const usedBarrelsDisplay = document.getElementById('usedBarrelsDisplay');
+        const remainingBarrels = document.getElementById('remainingBarrels');
+        const percentUsed = document.getElementById('percentUsed');
+        const percentRemaining = document.getElementById('percentRemaining');
+        const progressBar = document.getElementById('progressBar');
+        
+        const barrelsGrid = document.getElementById('barrelsGrid');
+
+        // Initial render
+        renderBarrels();
+
+        // Update functions
+        function updateTotalBarrels(value) {
+            const total = parseInt(value);
+            
+            // Update all total barrels elements
+            totalBarrelsRange.value = total;
+            totalBarrelsNumber.value = total;
+            totalBarrelsDisplay.textContent = total;
+            
+            // Make sure used barrels don't exceed total
+            const used = parseInt(usedBarrelsNumber.value);
+            if (used > total) {
+                updateUsedBarrels(total);
+            } else {
+                // Recalculate percentages and render
+                updateSummary();
+                renderBarrels();
+            }
+            
+            // Update used barrels range max
+            usedBarrelsRange.max = total;
+            usedBarrelsNumber.max = total;
+        }
+
+        function updateUsedBarrels(value) {
+            const used = parseInt(value);
+            const total = parseInt(totalBarrelsNumber.value);
+            
+            // Make sure used doesn't exceed total
+            const validUsed = Math.min(used, total);
+            
+            // Update used barrels elements
+            usedBarrelsRange.value = validUsed;
+            usedBarrelsNumber.value = validUsed;
+            usedBarrelsDisplay.textContent = validUsed;
+            
+            updateSummary();
+            renderBarrels();
+        }
+
+        function updateSummary() {
+            const total = parseInt(totalBarrelsNumber.value);
+            const used = parseInt(usedBarrelsNumber.value);
+            const remaining = total - used;
+            const usedPercent = Math.round((used / total) * 100);
+            const remainingPercent = 100 - usedPercent;
+            
+            remainingBarrels.textContent = remaining;
+            percentUsed.textContent = usedPercent;
+            percentRemaining.textContent = remainingPercent;
+            progressBar.style.width = usedPercent + '%';
+        }
+
+        function renderBarrels() {
+            const total = parseInt(totalBarrelsNumber.value);
+            const used = parseInt(usedBarrelsNumber.value);
+            
+            // Clear existing barrels
+            barrelsGrid.innerHTML = '';
+            
+            // Create barrel elements
+            for (let i = 0; i < total; i++) {
+                const barrel = document.createElement('div');
+                barrel.className = 'barrel';
+                
+                // Determine color based on whether it's used or remaining
+                const color = i < used ? '#dc3545' : '#28a745';
+                const barrelHTML = barrelSVG.replace('COLOR_PLACEHOLDER', color);
+                
+                barrel.innerHTML = barrelHTML;
+                barrelsGrid.appendChild(barrel);
+            }
+        }
+
+        // Event listeners
+        totalBarrelsRange.addEventListener('input', (e) => updateTotalBarrels(e.target.value));
+        totalBarrelsNumber.addEventListener('change', (e) => updateTotalBarrels(e.target.value));
+        
+        usedBarrelsRange.addEventListener('input', (e) => updateUsedBarrels(e.target.value));
+        usedBarrelsNumber.addEventListener('change', (e) => updateUsedBarrels(e.target.value));
+    </script>
 
     <footer>
         <p>&copy; 2025 The Envelope</p>
