@@ -496,7 +496,7 @@ header {
     background: #f5f5f5;
     padding: 15px 20px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     font-family: "Libre Baskerville", serif;
     font-size: 20px;
