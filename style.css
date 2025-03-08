@@ -502,7 +502,6 @@ header {
     font-size: 20px;
     color: #333;
     transition: background 0.3s ease;
-    gap: 10px;
 }
  
 .resource-link:hover .resource-header {
