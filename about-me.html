@@ -28,18 +28,112 @@
         </div>
     </header>
 
-    <main class="container">
-    <!-- Page Title -->
-    <h1 class="page-heading">About me</h1>
-
-    <!-- Image + Section Title + Divider + Description -->
-    <section class="intro">
-        <div class="intro-left">
-            <h2>Sriram S</h2>
-            <img src="Envelope/pictures/IMG_3587.HEIC" alt="Section Image" class="intro-image">
+     <main>
+        <div class="about-container">
+            <!-- Left Sidebar with Profile Picture and Social Links -->
+            <aside class="about-sidebar">
+                <div class="profile-image-container">
+                    <img src="pictures/profile-placeholder.jpg" alt="Sriram S" class="profile-image">
+                </div>
+                
+                <h2 class="profile-name">Sriram S</h2>
+                
+                <div class="social-links">
+                    <a href="https://instagram.com/username" class="social-link" target="_blank">
+                        <i class="fab fa-instagram social-icon"></i>
+                        <span class="social-name">Instagram</span>
+                    </a>
+                    
+                    <a href="https://twitter.com/username" class="social-link" target="_blank">
+                        <i class="fab fa-twitter social-icon"></i>
+                        <span class="social-name">Twitter</span>
+                    </a>
+                    
+                    <a href="https://linkedin.com/in/username" class="social-link" target="_blank">
+                        <i class="fab fa-linkedin social-icon"></i>
+                        <span class="social-name">LinkedIn</span>
+                    </a>
+                    
+                    <a href="path/to/cv.pdf" class="social-link" target="_blank">
+                        <i class="far fa-file-pdf social-icon"></i>
+                        <span class="social-name">CV</span>
+                    </a>
+                </div>
+            </aside>
+            
+            <!-- Main Content Area -->
+            <div class="about-content">
+                <h1 class="about-heading">About Me</h1>
+                
+                <p class="about-description">
+                    Hi! I'm Sriram. This is where you can share a brief introduction about yourself, your background, interests, and what visitors can expect from your website. This paragraph gives readers a quick overview before they dive into the more detailed sections below.
+                </p>
+                
+                <!-- Toggle Sections -->
+                <div class="toggle-section">
+                    <div class="toggle-header">
+                        <span>Background & Education</span>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </div>
+                    <div class="toggle-content">
+                        <p>Here you can share information about your educational background, degrees, institutions you've attended, and any notable achievements during your academic career.</p>
+                        <p>Additionally, you might want to include formative experiences that have shaped your perspective and career path.</p>
+                    </div>
+                </div>
+                
+                <div class="toggle-section">
+                    <div class="toggle-header">
+                        <span>Professional Experience</span>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </div>
+                    <div class="toggle-content">
+                        <p>This section can highlight your professional journey, including previous roles, companies you've worked with, and key responsibilities or achievements from each position.</p>
+                        <p>You might also want to mention any industry recognition, awards, or special projects you've led that demonstrate your expertise.</p>
+                    </div>
+                </div>
+                
+                <div class="toggle-section">
+                    <div class="toggle-header">
+                        <span>Skills & Expertise</span>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </div>
+                    <div class="toggle-content">
+                        <p>Use this section to outline your technical skills, soft skills, industry knowledge, and any specialized expertise you possess that sets you apart in your field.</p>
+                        <p>Consider organizing these by category or proficiency level to give readers a clear understanding of your capabilities.</p>
+                    </div>
+                </div>
+                
+                <div class="toggle-section">
+                    <div class="toggle-header">
+                        <span>Personal Interests</span>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </div>
+                    <div class="toggle-content">
+                        <p>Share a bit about your hobbies, interests outside of work, causes you care about, or personal projects you're passionate about.</p>
+                        <p>This helps readers connect with you on a more personal level and understand what motivates you beyond your professional life.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="intro-divider"></div> <!-- Vertical line -->
-        <p>Hi! I'm Sriram. </p>
-    </section>
     </main>
+    
+    <footer>
+        <p>&copy; 2025 The Envelope | All Rights Reserved</p>
+    </footer>
+    
+    <script>
+        // JavaScript for toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleSections = document.querySelectorAll('.toggle-section');
+            
+            toggleSections.forEach(section => {
+                const header = section.querySelector('.toggle-header');
+                
+                header.addEventListener('click', function() {
+                    section.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
 </html>
