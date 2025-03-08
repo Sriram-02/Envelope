@@ -660,6 +660,119 @@ header {
     }
 }
 
+.oil-vis-container {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+}
+
+.oil-vis-box {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.oil-vis-title {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.oil-vis-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.oil-vis-control-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.oil-vis-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.oil-vis-input-range, .oil-vis-input-number {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.oil-vis-summary {
+    background-color: #e9ecef;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.oil-vis-summary-title {
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.oil-vis-summary-text {
+    margin: 8px 0;
+}
+
+.oil-vis-legend {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.oil-vis-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.oil-vis-color-box {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+}
+
+.oil-vis-used {
+    background-color: #dc3545;
+}
+
+.oil-vis-remaining {
+    background-color: #28a745;
+}
+
+.oil-vis-progress-container {
+    height: 20px;
+    background-color: #e9ecef;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.oil-vis-progress-bar {
+    height: 100%;
+    background-color: #dc3545;
+    transition: width 0.3s ease;
+}
+
+.oil-vis-barrels-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 5px;
+}
+
+.oil-vis-barrel {
+    width: 30px;
+    height: 40px;
+    margin: 0 auto;
+}
+
 /* ----- RESPONSIVE ADJUSTMENTS ----- */
 @media (max-width: 768px) {
     /* Smaller hero section on mobile */
