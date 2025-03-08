@@ -317,6 +317,14 @@ header {
     margin-bottom: 20px;
 }
 
+/* Blog date time venue */
+.blog-meta {
+    font-size: 14px;
+    color: #666; /* Soft gray */
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
 /* Blog post paragraphs */
 .blog-container p {
     font-family: 'Inter', sans-serif;
