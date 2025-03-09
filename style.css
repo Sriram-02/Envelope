@@ -36,6 +36,7 @@ header {
     width: 100%;
     justify-content: space-between;
     padding: 0 20px; /* Added padding for smaller screens */
+    position: relative;
 }
 
 /* Site title styling */
@@ -46,6 +47,14 @@ header {
     font-size: 32px;
     font-family: "Libre Baskerville", "Times New Roman", serif;
     font-weight: normal;
+    transition: all 0.3s ease;
+}
+
+/* New class for scrolled state */
+.header-title.scrolled {
+    font-size: 24px;
+    text-align: left;
+    margin-left: 0;
 }
 
 /* Link styling inside header title */
@@ -58,13 +67,14 @@ header {
 
 /* progress bar styling */
 .scroll-progress-bar {
-    height: 3px; /* Height of the progress bar */
-    background: #D71920; /* Same red color */
-    width: 0%; /* Initial width */
+    height: 3px;
+    background: #FFD700; /* Golden yellow */
+    width: 0%;
     position: absolute;
     bottom: 0;
     left: 0;
-    transition: width 0.1s ease-out; /* Smooth transition */
+    transition: width 0.1s ease-out;
+    z-index: 1200; /* Ensure it's on top */
 }
 
 /* ----- NAVIGATION MENU ----- */
@@ -75,6 +85,7 @@ header {
     align-items: center;
     margin-left: auto;
     z-index: 1100;
+    flex-shrink: 0;
 }
 
 /* Menu button styling */
