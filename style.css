@@ -56,6 +56,17 @@ header {
     font-weight: inherit;
 }
 
+/* progress bar styling */
+.scroll-progress-bar {
+    height: 3px; /* Height of the progress bar */
+    background: #D71920; /* Same red color */
+    width: 0%; /* Initial width */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.1s ease-out; /* Smooth transition */
+}
+
 /* ----- NAVIGATION MENU ----- */
 /* Index menu container */
 .index-menu {
