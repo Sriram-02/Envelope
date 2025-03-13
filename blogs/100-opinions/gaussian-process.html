@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaussian Processes</title>
+    <link rel="stylesheet" href="/Envelope/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="pictures/newlogo.png">
+</head>
+<body class="blog-page">
+    <header class="site-header">
+        <div class="header-container">
+            <h1 class="header-title">
+                <a href="/Envelope/index.html">The Envelope</a>
+            </h1>
+            <div class="index-menu">
+                <button class="index-button">☰ </button>
+                <div class="index-dropdown">
+                    <a href="/Envelope/fast-but-wrong.html">⚡ Fast but Wrong</a>
+                    <a href="/Envelope/100-opinions.html">💡 100 Opinions</a>
+                    <a href="/Envelope/back-of-the-envelope.html">📊 Back of the Envelope</a>
+                    <a href="/Envelope/about-me.html">🚀 About me</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-progress-bar"></div>
+    </header>
+
+    <main class="blog-container">
+        <section class="hero-section">
+        <img src="/Envelope/pictures/8305AE36-924F-4DD2-86E7-8FB0C7B50541.png" alt="Opinion 1" class="hero-image">
+        <div class="hero-overlay"></div>
+        </section>
+        
+        <h2>Visualising Gaussian/normal distributions</h2>
+        <p class="blog-meta">🗓️ March 13, 2025 • 📍 Mumbai, India • ⏳ 3 min read</p>    
+        <p>Debate scoring operates within a bounded range, typically from 50 to 100, with an informal average clustering around 75. Yet, even with structured guidelines, scores can vary due to subjective judgments, topic difficulties, and contextual differences. This complexity invites a statistical perspective, particularly through the lens of the Central Limit Theorem (CLT) and the Law of Large Numbers (LLN).</p>
+    
+        <h2>Why Debate Scores Aren't Fully Gaussian</h2>
+        <p>When you plot raw debate scores, the distribution often deviates from a perfect bell curve. Scores tend to cluster around the middle, with fewer extreme scores, resulting in a slightly skewed or non-Gaussian shape.</p>
+        <img src="debate_scores_histogram.png" alt="Histogram of Debate Scores">
+    
+        <h2>The Central Limit Theorem (CLT) in Action</h2>
+        <p>The CLT states that, regardless of the original distribution of data, the distribution of sample means will approximate a normal distribution as the sample size increases. This means that if you repeatedly sample debate scores (with replacement) and plot the means, the resulting distribution of those means will be Gaussian, even if the original scores were not.</p>
+        <img src="sample_means_histogram.png" alt="Histogram of Sample Means Showing Gaussian Distribution">
+    
+        <h2>The Law of Large Numbers (LLN)</h2>
+        <p>LLN explains that as the sample size grows, the sample mean will converge to the true population mean. This convergence assures that larger datasets provide more reliable estimates of the overall average performance, smoothing out anomalies that may distort smaller samples.</p>
+    
+        <h2>Conclusion</h2>
+        <p>While individual debate scores may not follow a perfect Gaussian distribution, understanding the behavior of sample means and large samples through CLT and LLN offers clarity. It highlights how statistical properties evolve with larger datasets, ensuring that analyses based on aggregate data become more stable and representative over time.</p>
+    
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 The Envelope</p>
+    </footer>
+    <script src="/Envelope/script.js" defer></script>
+</body>
+</html>
