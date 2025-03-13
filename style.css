@@ -355,6 +355,12 @@ header {
     color: #333;
 }
 
+/*Blog illustration */
+.blog-illustration {
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
 /* About page specific styles */
 .about-container {
     display: flex;
