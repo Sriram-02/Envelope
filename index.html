@@ -18,17 +18,25 @@
                 <a href="/Envelope/index.html">The Envelope</a>
             </h1>
             <div class="index-menu">
-                <button class="index-button">☰ </button>
-                <div class="index-dropdown">
-                    <a href="fast-but-wrong.html">⚡ Fast but Wrong</a>
-                    <a href="100-opinions.html">💡 100 Opinions</a>
-                    <a href="back-of-the-envelope.html">📊 Back of the Envelope</a>
-                    <a href="about-me.html">🚀 About me</a>
-                </div>
+                <button class="index-button" id="sidebarToggle">☰</button>
             </div>
         </div>
         <div class="scroll-progress-bar"></div>
     </header>
+    
+    <!-- New Sidebar -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <button class="sidebar-close" id="sidebarClose">✕</button>
+        </div>
+        <div class="sidebar-content">
+            <a href="fast-but-wrong.html">⚡ Fast but Wrong</a>
+            <a href="100-opinions.html">💡 100 Opinions</a>
+            <a href="back-of-the-envelope.html">📊 Back of the Envelope</a>
+            <a href="about-me.html">🚀 About me</a>
+        </div>
+    </div>
     
     <main class="container">
         <section class="category">
